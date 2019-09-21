@@ -1,0 +1,15 @@
+current directory: /home/jiad/Documents/projects/rail_projects_afterpiscine/retry/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/usr/share/rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20190921-3414-iit3bz.rb extconf.rb
+creating Makefile
+
+current directory: /home/jiad/Documents/projects/rail_projects_afterpiscine/retry/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/jiad/Documents/projects/rail_projects_afterpiscine/retry/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/jiad/Documents/projects/rail_projects_afterpiscine/retry/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug_inspector.so ./.gem.20190921-3414-12sg9z9
