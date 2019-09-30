@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'profile/show'
   get 'admin/index'
   devise_for :users
   root to: "home#index"
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   end
 
 resources :admin
+resources :profile
 
   #devise_for :users, controllers: { confirmations: 'confirmations' }
 end
