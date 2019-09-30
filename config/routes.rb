@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
 resources :admin
 resources :profile
-
+resources :post
   #devise_for :users, controllers: { confirmations: 'confirmations' }
 end
