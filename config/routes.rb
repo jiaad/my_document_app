@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'timeline/index'
   get 'profile/show'
   get 'admin/index'
   devise_for :users
