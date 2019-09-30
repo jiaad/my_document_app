@@ -1,10 +1,6 @@
 class ProfileController < ApplicationController
   def show
     @user = User.find(params[:id])
-    
-    puts "="*30
-      puts @profile
-    puts "="*30
   end
 
   def update
