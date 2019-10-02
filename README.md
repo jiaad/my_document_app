@@ -31,6 +31,16 @@
 ## to try it in local
 
 ```
+you will need to implement a .ENV file
+
+i have used MAILJET for mailer : next 3 keys are for mailjet
+PUBLIC_MAILJET=''
+SECRECT_MAILJET=''
+EMAIL_MAILJET=''
+
+```
+
+```
 git clone git@github.com:jiaad/my_document_app.git
 bundle install
 rails db:create
