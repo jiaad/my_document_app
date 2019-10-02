@@ -7,22 +7,15 @@ class User < ApplicationRecord
     self.role ||= :user
   end
 
-  # after_save :send_welcome_email
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+  has_many :posts, dependent: :destroy
 
   def after_confirmation
       UserMailer.welcome_email(self).deliver #if self.confirmed_at_changed?
   end
 
-  def after_sign_in_path_for(resource_or_scope)
-    flash[:modal] = '#login-message-modal'
-    root_url
-  end
-  
+
   private
   # def validate_email
   #   self.email_confirmed = true

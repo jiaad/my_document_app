@@ -1,24 +1,49 @@
-# README
+# My personal Documentation App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> i am creating this application to expand my knowledge in web development
+>
+> its purpose is to be used as a documentation for myself
+>
+> i am implementing features and will add new features as soon as possible
 
-Things you may want to cover:
+## features at the moment
 
-* Ruby version
+- auth(Devise, confirmation with mailer, password reset etc..)
+- admin(with enum)
+- post multiple images with active storage
 
-* System dependencies
+## features coming
 
-* Configuration
+- search
+- real time comment
+- messaging
+- follow
 
-* Database creation
+## TDD AND BDD
 
-* Database initialization
+- i will implement rspec & capybara etc..
 
-* How to run the test suite
+## maybe be i will implement
 
-* Services (job queues, cache servers, search engines, etc.)
+- client side with Vue or REACT or i will create another repo to implement REACT OR VUE
+- Drag and drop for Active storage
 
-* Deployment instructions
+## to try it in local
 
-* ...
+```
+you will need to implement a .ENV file
+
+i have used MAILJET for mailer : next 3 keys are for mailjet
+PUBLIC_MAILJET=''
+SECRECT_MAILJET=''
+EMAIL_MAILJET=''
+
+```
+
+```
+git clone git@github.com:jiaad/my_document_app.git
+bundle install
+rails db:create
+rails db:migrate
+rails server
+```
