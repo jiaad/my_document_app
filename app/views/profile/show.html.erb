@@ -4,20 +4,20 @@
 
 <% if user_signed_in? && current_user.admin? %>
   <%= form_for @user, url: profile_path do |f| %>
-  
+
   <div class="form-check">
       <%= f.radio_button :role, "vip", class: 'form-check-input' , :checked => @user.vip?%>
     <label class="form-check-label" >VIP</label>
   </div>
-  
-  
+
+
   <div class="form-check">
       <%= f.radio_button :role, "user", class: 'form-check-input', :checked => @user.user?%>
     <label class="form-check-label" >user</label>
   </div>
-  
-  
-  
+
+
+
   <div class="form-check">
       <%= f.radio_button :role, "admin", class: 'form-check-input', :checked => @user.admin?%>
     <label class="form-check-label" >admin</label>
