@@ -2,6 +2,11 @@
 
 <%= form_for :post,  :url => { :action => "create" } do |f| %>
 
+<% if @post.errors.any? %>
+   <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+<%end%>
   <div class="col-group">
   <%= f.text_field :user_id, value: current_user.id, class: "d-none"%>
 </div>
@@ -19,12 +24,11 @@
     <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
   </div>
   <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile01"
-      aria-describedby="inputGroupFileAddon01">
-        <%= f.file_field :images, class: "custom-file-input", id:"inputGroupFile01", 'aria-describedby' => "inputGroupFileAddon01",multiple: true %>
     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        <%= f.file_field :images, class: "custom-file-input", id:"inputGroupFile01", 'aria-describedby' => "inputGroupFileAddon01",multiple: true %>
   </div>
 </div>
+<%= f.hidden_field :images_attachments %>
 
 
   <div class="submit-tag">
