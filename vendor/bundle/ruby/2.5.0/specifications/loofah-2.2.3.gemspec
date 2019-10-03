@@ -16,10 +16,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/flavorjones/loofah".freeze
   s.licenses = ["MIT".freeze]
   s.rdoc_options = ["--main".freeze, "README.md".freeze]
-  s.rubygems_version = "2.7.7".freeze
+  s.rubygems_version = "3.0.6".freeze
   s.summary = "Loofah is a general library for manipulating and transforming HTML/XML documents and fragments".freeze
 
-  s.installed_by_version = "2.7.7" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.6" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<hoe-bundler>.freeze, [">= 0"])
       s.add_development_dependency(%q<hoe-git>.freeze, [">= 0"])
       s.add_development_dependency(%q<concourse>.freeze, [">= 0.15.0"])
-      s.add_development_dependency(%q<rdoc>.freeze, ["< 7", ">= 4.0"])
+      s.add_development_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
       s.add_development_dependency(%q<hoe>.freeze, ["~> 3.17"])
     else
       s.add_dependency(%q<nokogiri>.freeze, [">= 1.5.9"])
@@ -50,7 +50,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<hoe-bundler>.freeze, [">= 0"])
       s.add_dependency(%q<hoe-git>.freeze, [">= 0"])
       s.add_dependency(%q<concourse>.freeze, [">= 0.15.0"])
-      s.add_dependency(%q<rdoc>.freeze, ["< 7", ">= 4.0"])
+      s.add_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
       s.add_dependency(%q<hoe>.freeze, ["~> 3.17"])
     end
   else
@@ -65,7 +65,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<hoe-bundler>.freeze, [">= 0"])
     s.add_dependency(%q<hoe-git>.freeze, [">= 0"])
     s.add_dependency(%q<concourse>.freeze, [">= 0.15.0"])
-    s.add_dependency(%q<rdoc>.freeze, ["< 7", ">= 4.0"])
+    s.add_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_dependency(%q<hoe>.freeze, ["~> 3.17"])
   end
 end

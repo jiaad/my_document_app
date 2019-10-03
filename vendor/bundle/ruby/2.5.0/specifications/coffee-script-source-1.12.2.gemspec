@@ -13,9 +13,8 @@ Gem::Specification.new do |s|
   s.email = "jashkenas@gmail.com".freeze
   s.homepage = "http://coffeescript.org".freeze
   s.licenses = ["MIT".freeze]
-  s.rubyforge_project = "coffee-script-source".freeze
-  s.rubygems_version = "2.7.7".freeze
+  s.rubygems_version = "3.0.6".freeze
   s.summary = "The CoffeeScript Compiler".freeze
 
-  s.installed_by_version = "2.7.7" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.6" if s.respond_to? :installed_by_version
 end

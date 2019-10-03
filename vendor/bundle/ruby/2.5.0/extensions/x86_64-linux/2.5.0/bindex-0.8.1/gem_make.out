@@ -1,5 +1,5 @@
 current directory: /home/jiad/Documents/projects/rail_projects_afterpiscine/retry/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
-/usr/share/rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20190921-21861-1eq2avd.rb extconf.rb
+/usr/share/rvm/rubies/ruby-2.5.1/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191003-11572-1424jm7.rb extconf.rb
 creating Makefile
 
 current directory: /home/jiad/Documents/projects/rail_projects_afterpiscine/retry/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
@@ -12,4 +12,4 @@ linking shared-object skiptrace/internal/cruby.so
 
 current directory: /home/jiad/Documents/projects/rail_projects_afterpiscine/retry/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" install
-/usr/bin/install -m 0755 cruby.so ./.gem.20190921-21861-1lh53og/skiptrace/internal
+/usr/bin/install -m 0755 cruby.so ./.gem.20191003-11572-ppf1rz/skiptrace/internal

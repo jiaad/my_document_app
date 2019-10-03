@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.email = ["titusfortner@gmail.com".freeze, "kapoorlakshya@gmail.com".freeze]
   s.homepage = "https://github.com/titusfortner/webdrivers".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "2.7.7".freeze
+  s.rubygems_version = "3.0.6".freeze
   s.summary = "Easy download and use of browser drivers.".freeze
 
-  s.installed_by_version = "2.7.7" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.6" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<simplecov>.freeze, ["~> 0.16"])
       s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.6"])
       s.add_runtime_dependency(%q<rubyzip>.freeze, ["~> 1.0"])
-      s.add_runtime_dependency(%q<selenium-webdriver>.freeze, ["< 4.0", ">= 3.0"])
+      s.add_runtime_dependency(%q<selenium-webdriver>.freeze, [">= 3.0", "< 4.0"])
     else
       s.add_dependency(%q<ffi>.freeze, ["~> 1.0"])
       s.add_dependency(%q<irb>.freeze, [">= 0"])
@@ -44,7 +44,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<simplecov>.freeze, ["~> 0.16"])
       s.add_dependency(%q<nokogiri>.freeze, ["~> 1.6"])
       s.add_dependency(%q<rubyzip>.freeze, ["~> 1.0"])
-      s.add_dependency(%q<selenium-webdriver>.freeze, ["< 4.0", ">= 3.0"])
+      s.add_dependency(%q<selenium-webdriver>.freeze, [">= 3.0", "< 4.0"])
     end
   else
     s.add_dependency(%q<ffi>.freeze, ["~> 1.0"])
@@ -57,6 +57,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<simplecov>.freeze, ["~> 0.16"])
     s.add_dependency(%q<nokogiri>.freeze, ["~> 1.6"])
     s.add_dependency(%q<rubyzip>.freeze, ["~> 1.0"])
-    s.add_dependency(%q<selenium-webdriver>.freeze, ["< 4.0", ">= 3.0"])
+    s.add_dependency(%q<selenium-webdriver>.freeze, [">= 3.0", "< 4.0"])
   end
 end

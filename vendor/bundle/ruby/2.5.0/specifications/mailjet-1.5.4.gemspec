@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.email = ["tyler@mailjet.com".freeze, "devrel-team@mailjet.com".freeze, "jbescoyez@gmail.com".freeze]
   s.homepage = "http://www.mailjet.com".freeze
   s.post_install_message = "\n  The Ruby wrapper for Mailjet has just been installed successfully, congrats!\n  Maybe you want to configure your credentials to use your account.\n  All informations available on https://github.com/mailjet/mailjet-gem.\n  But if you are using Rails, you'll be glad to generate it easily using:\n\n    $ rails generate mailjet:initializer\n\n  We hope you will enjoy Mailjet!\n\n".freeze
-  s.rubygems_version = "2.7.7".freeze
+  s.rubygems_version = "3.0.6".freeze
   s.summary = "Mailjet a powerful all-in-one email service provider clients can use to get maximum insight and deliverability results from both their marketing and transactional emails. Our analytics tools and intelligent APIs give senders the best understanding of how to maximize benefits for each individual contact, with each email sent.".freeze
 
-  s.installed_by_version = "2.7.7" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.6" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
