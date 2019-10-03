@@ -35,7 +35,7 @@ you will need to implement a .ENV file
 
 i have used MAILJET for mailer : next 3 keys are for mailjet
 PUBLIC_MAILJET=''
-SECRECT_MAILJET=''
+SECRET_MAILJET=''
 EMAIL_MAILJET=''
 
 ```
