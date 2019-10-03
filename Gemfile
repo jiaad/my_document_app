@@ -7,6 +7,8 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.3'
 
 gem 'pg'
+gem "jquery-rails"
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -35,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'mailjet'
-
+# gem 'bootstrap'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

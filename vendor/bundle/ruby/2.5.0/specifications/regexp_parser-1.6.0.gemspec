@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT".freeze]
   s.rdoc_options = ["--inline-source".freeze, "--charset=UTF-8".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.1".freeze)
-  s.rubygems_version = "2.7.7".freeze
+  s.rubygems_version = "3.0.6".freeze
   s.summary = "Scanner, lexer, parser for ruby's regular expressions".freeze
 
-  s.installed_by_version = "2.7.7" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.6" if s.respond_to? :installed_by_version
 end

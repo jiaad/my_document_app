@@ -16,10 +16,10 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.2.2".freeze)
   s.requirements = ["none".freeze]
-  s.rubygems_version = "2.7.7".freeze
+  s.rubygems_version = "3.0.6".freeze
   s.summary = "Rendering framework putting the V in MVC (part of Rails).".freeze
 
-  s.installed_by_version = "2.7.7" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.6" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<activesupport>.freeze, ["= 5.2.3"])
       s.add_runtime_dependency(%q<builder>.freeze, ["~> 3.1"])
       s.add_runtime_dependency(%q<erubi>.freeze, ["~> 1.4"])
-      s.add_runtime_dependency(%q<rails-html-sanitizer>.freeze, [">= 1.0.3", "~> 1.0"])
+      s.add_runtime_dependency(%q<rails-html-sanitizer>.freeze, ["~> 1.0", ">= 1.0.3"])
       s.add_runtime_dependency(%q<rails-dom-testing>.freeze, ["~> 2.0"])
       s.add_development_dependency(%q<actionpack>.freeze, ["= 5.2.3"])
       s.add_development_dependency(%q<activemodel>.freeze, ["= 5.2.3"])
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<activesupport>.freeze, ["= 5.2.3"])
       s.add_dependency(%q<builder>.freeze, ["~> 3.1"])
       s.add_dependency(%q<erubi>.freeze, ["~> 1.4"])
-      s.add_dependency(%q<rails-html-sanitizer>.freeze, [">= 1.0.3", "~> 1.0"])
+      s.add_dependency(%q<rails-html-sanitizer>.freeze, ["~> 1.0", ">= 1.0.3"])
       s.add_dependency(%q<rails-dom-testing>.freeze, ["~> 2.0"])
       s.add_dependency(%q<actionpack>.freeze, ["= 5.2.3"])
       s.add_dependency(%q<activemodel>.freeze, ["= 5.2.3"])
@@ -45,7 +45,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<activesupport>.freeze, ["= 5.2.3"])
     s.add_dependency(%q<builder>.freeze, ["~> 3.1"])
     s.add_dependency(%q<erubi>.freeze, ["~> 1.4"])
-    s.add_dependency(%q<rails-html-sanitizer>.freeze, [">= 1.0.3", "~> 1.0"])
+    s.add_dependency(%q<rails-html-sanitizer>.freeze, ["~> 1.0", ">= 1.0.3"])
     s.add_dependency(%q<rails-dom-testing>.freeze, ["~> 2.0"])
     s.add_dependency(%q<actionpack>.freeze, ["= 5.2.3"])
     s.add_dependency(%q<activemodel>.freeze, ["= 5.2.3"])
