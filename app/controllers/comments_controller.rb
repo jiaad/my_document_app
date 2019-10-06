@@ -12,8 +12,10 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post.id)
     else
+      redirect_to post_path(@post.id)
+      flash[:danger] = "comment must exist"
       puts "==="*30
-        @comment.errors.full_messages
+       puts @comment.errors.full_messages
       puts "==="*30
     end
 
