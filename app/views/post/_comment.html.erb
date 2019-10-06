@@ -15,14 +15,20 @@
                 <div class="panel-body">
                     <ul class="media-list">
                         <li class="media">
+                          <%# if comment.user.avatar.attached? %>
+
+                            <%#= image_tag %>
+                            <% else %>
+
                             <a href="#" class="pull-left">
                                 <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle profile-img">
                             </a>
+                            <%#end%>
                             <div class="media-body">
                                 <span class="text-muted pull-right">
                                     <small class="text-muted">30 min ago</small>
                                 </span>
-                                <a href="<%= profile_path(comment.user.id)%>"><strong class="text-success">@<%= comment.user.name %></strong></a>
+                                <a href="<%= profile_path(comment.user.id)%> class="text-decoration-none"><strong class="text-success">@<%= comment.user.name %></strong></a>
                                 <p class="comment"><%= comment.body %></p>
                             </div>
                         </li>
