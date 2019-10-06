@@ -1,0 +1,43 @@
+<%#= form_for [@post, @comment], :url => post_comments_path(@post.id) do |f| %>
+
+  <%#= f.text_field :body %>
+  <%#= f.submit 'submit' %>
+<%# end %>
+
+  <%# <h4>Comment by <%= comment.user.email %>
+
+
+
+<div class="row bootstrap snippets mt-1">
+    <div class="col-md-6 col-md-offset-2 col-sm-12">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <ul class="media-list">
+                        <li class="media">
+                          <%# if comment.user.avatar.attached? %>
+
+                            <%#= image_tag %>
+                            <% else %>
+
+                            <a href="#" class="pull-left">
+                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle profile-img">
+                            </a>
+                            <%#end%>
+                            <div class="media-body">
+                                <span class="text-muted pull-right">
+                                    <small class="text-muted">30 min ago</small>
+                                </span>
+                                <a href="<%= profile_path(comment.user.id)%> class="text-decoration-none"><strong class="text-success">@<%= comment.user.name %></strong></a>
+                                <p class="comment"><%= comment.body %></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

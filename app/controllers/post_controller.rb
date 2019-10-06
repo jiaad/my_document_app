@@ -1,6 +1,8 @@
 class PostController < ApplicationController
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comment.post_id = @post.id
   end
 def new
   @post = Post.new
@@ -19,10 +21,15 @@ end
       puts "="*30
         puts @post.errors.full_messages
       puts "="*30
-
       render :new
     end
   end
+
+  def update
+    @post = Post.find(params[:id])
+    
+  end
+
   protected
 
   def post_params

@@ -1,0 +1,23 @@
+<div class="mt-5">
+<%= form_for [ @post, @comment ] do |f|  %>
+
+<div class="row bootstrap snippets">
+    <div class="col-md-6 col-md-offset-2 col-sm-12">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Comment panel
+                </div>
+                <div class="panel-body">
+                    <%= f.text_area :body, class:'form-control shadow-lg p-3 mb-5 bg-white rounded', rows:3, placeholder:'write a comment...' %>
+                    <br>
+                    <%= f.submit 'Post', class:'btn btn-info pull-right' %>
+                    <div class="clearfix"></div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
+</div>

@@ -2,7 +2,7 @@
 <div class="container">
 
 
-<h1><%= @post.images.length %></h1>
+<h4>there is total : <%= @post.images.length %> images</h4>
 
 
 
@@ -20,7 +20,7 @@
     <div class="carousel-inner">
       <% @post.images.each_with_index do |image, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : 'nothing' %>">
-          <%= image_tag(image, class: "d-block w-100") %>
+          <%= image_tag(image, class: "d-block w-100 shadow-lg p-3 mb-5 bg-white rounded") %>
       </div>
       <% end %>
     </div>
@@ -37,4 +37,21 @@
 <% end %>
   </div>
 
-</div>
+
+<%# <%= form_for [@post, @comment] do |f| %>
+
+<%# <%= form_for url: {new_post_postcomment_path }do |f| %> 
+<%# <%= form_for :PostComment ,  url: { controller: 'post_controller', action: "create", path: 'new_post_postcomment_path' }  do |f| %> 
+<%#= form_for [@post, @comment], :url => post_postcomment_index_path(@post.id) do |f| %>
+
+  <%#= f.text_field :body %>
+  <%#= f.submit 'submit' %>
+<%# end %>
+<%= render partial: 'comments/comments' %>
+<%#= render partial: 'articles/comment', collection: @article.comments.reverse %>
+
+
+
+
+<%= render partial: 'post/comment', collection: @post.comments.reverse %>
+</div><!-- container -->
