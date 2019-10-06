@@ -37,4 +37,21 @@
 <% end %>
   </div>
 
-</div>
+
+<%# <%= form_for [@post, @comment] do |f| %>
+
+<%# <%= form_for url: {new_post_postcomment_path }do |f| %> 
+<%# <%= form_for :PostComment ,  url: { controller: 'post_controller', action: "create", path: 'new_post_postcomment_path' }  do |f| %> 
+<%#= form_for [@post, @comment], :url => post_postcomment_index_path(@post.id) do |f| %>
+
+  <%#= f.text_field :body %>
+  <%#= f.submit 'submit' %>
+<%# end %>
+<%= render partial: 'comments/comments' %>
+<%#= render partial: 'articles/comment', collection: @article.comments.reverse %>
+
+
+
+
+<%= render partial: 'post/comment', collection: @post.comments.reverse %>
+</div><!-- container -->
