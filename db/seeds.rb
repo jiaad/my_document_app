@@ -13,3 +13,4 @@ def user_role_as_user
     i+=1
   end
 end
+
