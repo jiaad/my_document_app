@@ -1,15 +1,16 @@
 <div class="container">
-
-<%= form_for :post,  :url => { :action => "create" } do |f| %>
-
 <% if @post.errors.any? %>
    <% @post.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
 <%end%>
+
+
+<%= form_for :post,  :url => { :action => "create" ,class:'dropzone',id:'my-awesome-dropzone'} do |f| %>
+
   <div class="col-group">
-  <%= f.text_field :user_id, value: current_user.id, class: "d-none"%>
-</div>
+    <%= f.text_field :user_id, value: current_user.id, class: "d-none"%>
+  </div>
 
   <div class="form-group">
     <label for="<%= :description %>">description: </label>
