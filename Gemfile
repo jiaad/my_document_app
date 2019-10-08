@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'mailjet'
+gem 'dropzonejs-rails'
+
 # gem 'bootstrap'
 
 # Reduces boot times through caching; required in config/boot.rb
