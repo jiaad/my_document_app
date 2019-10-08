@@ -1,0 +1,10 @@
+<% flash.each do |name, msg| %>
+  <div class="row ml-auto pull-right" style="position:absolute; top: 80px !important; right: 25px !important;">
+    <div class="alert-group" style="width:100%">
+      <div class="alert alert-<%= name %> alert-dismissable">
+        <button type="button" class="close" id="close-flash" data-dismiss="alert" aria-hidden="true">×</button>
+        <%= msg %>
+      </div>
+    </div>
+  </div>
+<% end %>
