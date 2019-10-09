@@ -14,4 +14,5 @@
 //= require activestorage
 //= require turbolinks
 //= require dropzone
+//= require custom_app
 //= require_tree .
