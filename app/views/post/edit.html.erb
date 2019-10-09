@@ -1,2 +1,97 @@
 <h1>Post#edit</h1>
 <p>Find me in app/views/post/edit.html.erb</p>
+
+
+<div class="container">
+<% if @post.errors.any? %>
+   <% @post.errors.full_messages.each do |message| %>
+   <div class="alert alert-danger">
+      <li class=""><%= message %></li>
+      </div>
+    <% end %>
+<%end%>
+
+
+<%= form_for @post do |f| %>
+
+  <div class="col-group">
+    <%= f.text_field :user_id, value: current_user.id, class: "d-none"%>
+  </div>
+
+  <div class="form-group">
+    <label for="<%= :description %>">description: </label>
+     <%= f.text_area :description, class:'form-control grow-with-text', :cols => 10, :rows => 10, placeholder:'#livingMyBestLife'%>
+  </div>
+
+
+
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+  </div>
+  <div class="custom-file">
+    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        <%= f.file_field :images, class: "custom-file-input", id:"inputGroupFile01", 'aria-describedby' => "inputGroupFileAddon01",multiple: true %>
+  </div>
+</div>
+<%= f.hidden_field :images_attachments %>
+
+
+<div class="row text-center text-lg-left">
+      <% @post.images.each_with_index do |img|%>
+    <div class="col-lg-3 col-md-4 col-6" id="img-rmv-<%= img %>">
+      <%# <a href="#" class="d-block mb-4 h-100"> %>
+          <%# <%= image_tag(img, class: "img-fluid img-thumbnail") %>
+          <%# </a> %>
+           <%# <%= link_to 'delete',controller:'post_controller' ,action:'destroy', id:img.id, method: :delete %> 
+            <%# <%= link_to img, method: :delete, data: {confirm: 'Are you sure?'} do %> 
+  <%= link_to 'Remove', post_image_image_destroy_path(@post, img.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= image_tag(img, class: "img-fluid img-thumbnail") %>
+
+             <%# end %> 
+    </div>
+      <%end%>
+</div>
+
+  <div class="submit-tag">
+    <%= submit_tag "Create" , class: 'btn btn-primary btn-lg btn-block'%>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% end %>
+
+</div> <!--  container-->
+
+
+ 
+ 
