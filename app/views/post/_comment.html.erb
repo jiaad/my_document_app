@@ -28,7 +28,7 @@
                                 <span class="text-muted pull-right">
                                     <small class="text-muted">30 min ago</small>
                                 </span>
-                                <a href="<%= profile_path(comment.user.id)%> class="text-decoration-none"><strong class="text-success">@<%= comment.user.name %></strong></a>
+                               <%= link_to "@#{comment.user.name}", profile_path(comment.user.id), class:'text-success'%>
                                 <p class="comment"><%= comment.body %></p>
                             </div>
                         </li>
