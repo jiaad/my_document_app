@@ -1,7 +1,7 @@
 <div class="container">
 <% if @post.errors.any? %>
    <% @post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+      <li class="alert alert-danger"><%= message %></li>
     <% end %>
 <%end%>
 
