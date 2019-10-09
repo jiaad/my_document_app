@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 resources :admin
 resources :profile
 resources :post do
+  resources :images do
+    match '/image_destroy' , to: "post#image_destroy" ,via: 'delete'
+  end
   resources :comments#, only: [:new, :post] 
 end
 
