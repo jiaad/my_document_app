@@ -15,6 +15,7 @@ Rails.application.config.assets.paths << Rails.root.join("vendor", "js")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "color")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "fonts")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "contactform")
+Rails.application.config.assets.paths << Rails.root.join("lib", "assets")
 
 
 
