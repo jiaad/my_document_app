@@ -16,8 +16,17 @@ Rails.application.config.assets.paths << Rails.root.join("vendor", "color")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "fonts")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "contactform")
 Rails.application.config.assets.paths << Rails.root.join("lib", "assets")
+Rails.application.config.assets.paths << Rails.root.join("vendor", "home_template")
+#Rails.application.config.assets.paths << Rails.root.join("lib", "assets")
+#Rails.application.config.assets.paths << Rails.root.join("lib", "assets")
+Rails.application.config.assets.paths << Rails.root.join("vendor", "home_template", "css")
+Rails.application.config.assets.paths << Rails.root.join("vendor", "home_template", "js")
 
+Rails.application.config.assets.paths << Rails.root.join("vendor", "home_template", "fonts")
 
+Rails.application.config.assets.paths << Rails.root.join("vendor", "home_template", "color")
+
+Rails.application.config.assets.paths << Rails.root.join("vendor", "home_template", "contactform")
 
 
 
