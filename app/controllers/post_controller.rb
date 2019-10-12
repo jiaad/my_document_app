@@ -42,9 +42,9 @@ if    @post.update(post_params)
   #Post.images.find(params[:images_id])
   @post = Post.find(params[:post_id])
   #@image = ActiveStorage::Attachment.find(params[:id])
+  #answer # https://stackoverflow.com/questions/53411099/removing-activestorage-attachments-in-rails-5/53444294#53444294
   @image = @post.images.find(params[:image_id])
   @image.purge
-  #@post.
   redirect_back(fallback_location: edit_post_path(@post.id))
  end
   protected
