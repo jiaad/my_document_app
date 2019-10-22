@@ -1,4 +1,12 @@
 class User < ApplicationRecord
+  
+  extend FriendlyId
+  friendly_id :pseudo, use:Module.new {
+    def should_generate_new_friendly_id?
+      slug.blank? || super
+    end
+  }
+
 
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
@@ -21,6 +29,8 @@ class User < ApplicationRecord
 
   private
   # def validate_email
+
+
   #   self.email_confirmed = true
   #   self.cofirm_token = nil
   # end
@@ -30,4 +40,10 @@ class User < ApplicationRecord
   #       self.cofirm_token = SecureRandom.urlsafe_base64.to_s
   #     end
   #   end
+
+
+  def should_generate_new_friendly_id?
+    slug.blank? || name_changed?
+  end
+
 end
