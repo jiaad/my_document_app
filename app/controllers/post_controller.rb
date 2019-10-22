@@ -1,4 +1,6 @@
 class PostController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+  
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
