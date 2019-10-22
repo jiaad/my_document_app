@@ -1,5 +1,8 @@
 <h1>Profile#show</h1>
 <p>Find me in app/views/profile/show.html.erb</p>
+<p><%= @user.pseudo %></p>
+<p><%= @user.name %></p>
+<p><%= @user.slug %></p>
 
 
 <% if user_signed_in? && current_user.admin? %>
