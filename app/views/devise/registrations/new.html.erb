@@ -1,5 +1,5 @@
 <h2>Sign up</h2>
-
+<h1>looooooooooooooooooooooooooool</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -27,3 +27,87 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+
+<div class="container">
+<br>  <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
+<hr>
+
+
+
+
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Create Account</h4>
+	<p class="text-center">Get started with your free account</p>
+	<p>
+		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+	</p>
+	<p class="divider-text">
+        <span class="bg-light">OR</span>
+    </p>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+	<%# <form> %>
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+    <%= f.text_field :name, class:'form-control',autofocus: true, placeholder:'john doe'%>
+    </div> <!-- form-group// -->
+
+  <div class="form-group input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+      <i class="fas fa-user-tag"></i>
+    </div>
+    <%= f.text_field :pseudo, class:'form-control',autofocus: true, placeholder:'pseudo : john_doe'%>
+  </div> <!-- form-group// -->
+
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+    <%= f.email_field :email, class:'form-control',autofocus: true, autocomplete: "email" , placeholder:'Email address'%>
+    </div> <!-- form-group// -->
+
+    <%# <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select class="form-control">
+			<option selected=""> Select job type</option>
+			<option>Designer</option>
+			<option>Manager</option>
+			<option>Accaunting</option>
+		</select>
+	</div> <!-- form-group end.// --> %>
+
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		  </div>
+      <%= f.password_field :password, autocomplete: 'new-password', class:'form-control' , placeholder:"password : #{@minimum_password_length} minimum"  %>
+    </div> <!-- form-group// -->
+
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+      <%= f.password_field :password_confirmation, autocomplete: 'new-password', class:'form-control' , placeholder:"password : #{@minimum_password_length} minimum"  %>
+
+    </div> <!-- form-group// -->                                      
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+<%# </form> %>
+<% end %>
+</article>
+</div> <!-- card.// -->
+
+
+</div> 
+<!--container end.//-->
