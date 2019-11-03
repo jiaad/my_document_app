@@ -1,21 +1,52 @@
-    <div class="carousel-inner" role="listbox">
-      <%# <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/LAaSoL0LrYs/1920x1080')">  %>
-      <div class="carousel-item active" style="background-image: url('https://i.imgur.com/jDK67ry.png ')"> 
+    <div class="gradient-home">
+    
+        <div class="carousel-inner" role="listbox">
+          <%# <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/LAaSoL0LrYs/1920x1080')">  %>
+        <!-- <div class="carousel-item active" style="background-image: url('https://i.imgur.com/jDK67ry.png ')">  -->
 
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">My Document APP</h2>
-          <p class="lead">this application is a documentation for my self and others</p>
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="display-4">My Document APP</h2>
+              <p class="lead">this application is a documentation for my self and others</p>
+            </div>
+          </div>
+      </div>
+      <div class="container">
+        <div class="time-container">
+          <time id="time">12:43:60</time>
         </div>
       </div>
-  </div>
-  <div class="container">
-    <time id="time">12:43:60</time>
-  </div>
 
-<!-- Page Content -->
-<section class="py-5">
-  <div class="container">
-    <h1 class="display-4">More comming soon</h1>
-    <p class="lead">Caching and all my routes will be available here</p>
+    <!-- Page Content -->
+    <section class="py-5">
+      <div class="container">
+        <h1 class="display-4">More comming soon</h1>
+        <p class="lead">Caching and all my routes will be available here</p>
+      </div>
+    </section>
   </div>
-</section>
+<%= javascript_tag do %>
+function timer() {
+  var id = document.querySelector("#time")
+  console.log('id is', id);
+
+  let new_time = new Date();
+  console.log(new_time);
+  let hours = new_time.getHours();
+  console.log(hours);
+  let minutes = new_time.getMinutes();
+  console.log(minutes);
+  let sec = new_time.getSeconds();
+  console.log(sec);
+
+  am_pm = hours >= 12 ? 'PM' : 'AM'
+  time.innerHTML = `${hours} <span>:</span> ${addZero(minutes)} <span>:</span> ${addZero(sec)}`
+  setTimeout(timer, 1000);
+}
+
+function addZero(n) {
+  return (parseInt(n, 10) < 10 ? '0' : '') + n;
+}
+
+timer()
+addZero()
+<% end %>
