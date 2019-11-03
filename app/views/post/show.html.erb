@@ -37,6 +37,7 @@
 <% end %>
   </div>
 
+<%= link_to 'delete', post_path(@post), method: :delete, data: {confirm: 'are tou sure '} %>
 
 <%# <%= form_for [@post, @comment] do |f| %>
 
