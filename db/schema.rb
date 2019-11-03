@@ -58,9 +58,6 @@ ActiveRecord::Schema.define(version: 2019_10_17_131242) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "post_comments", force: :cascade do |t|
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "description"
     t.bigint "user_id"
