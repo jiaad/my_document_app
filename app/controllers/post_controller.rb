@@ -6,11 +6,24 @@ class PostController < ApplicationController
     @comment = Comment.new
     @comment.post_id = @post.id
   end
-def new
-  @post = Post.new
-end
+
+  def new
+    @post = Post.new
+  end
+  
   def edit
     @post = Post.find(params[:id])
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:notice] = "Post deleted successfully"
+      redirect_to root_path
+    else
+      flash[:notice]="you do not have the rights or there is problem"
+      error_show(@post)
+    end
   end
 
   def create
@@ -29,15 +42,14 @@ end
 
   def update
     @post = Post.find(params[:id])
-if    @post.update(post_params)
+    if @post.update(post_params)
       redirect_to post_path(@post.id)
-      else
-       puts "="*30
-        puts @post.errors.full_messages
-      puts "="*30       
-    render :edit
+    else
+      error_show(@post)       
+      render :edit
     end
   end
+
  def image_destroy
   #@post = Post.find(params[:id])
   #Post.find_by(id:params[:id],images: images.id ).destroy
@@ -50,6 +62,12 @@ if    @post.update(post_params)
   redirect_back(fallback_location: edit_post_path(@post.id))
  end
   protected
+
+  def error_show(var, var2)
+    puts "="*30
+      puts var.errors.full_messages
+    puts "="*30
+  end
 
   def post_params
     params.require(:post).permit(:description, :user_id, images: [])
