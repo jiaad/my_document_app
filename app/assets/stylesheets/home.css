@@ -34,7 +34,7 @@
 
 #time {
   font-size: 8rem;
-  color: white;
+  color: $pink;
 
 }
 
@@ -55,7 +55,7 @@ h2 {
 
 
 
-body{
+/*body{
   background: rgba(40,6,132,1);
   background: -moz-linear-gradient(45deg, rgba(40,6,132,1) 0%, rgba(33,189,184,1) 100%);
   background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(40,6,132,1)), color-stop(100%, rgba(33,189,184,1)));
@@ -64,3 +64,4 @@ body{
   background: -ms-linear-gradient(45deg, rgba(40,6,132,1) 0%, rgba(33,189,184,1) 100%);
   background: linear-gradient(45deg, rgba(40,6,132,1) 0%, rgba(33,189,184,1) 100%);
 }
+*/
