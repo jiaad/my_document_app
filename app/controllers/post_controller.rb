@@ -1,5 +1,6 @@
 class PostController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
+
   
   def show
     @post = Post.find(params[:id])
@@ -61,6 +62,7 @@ class PostController < ApplicationController
   @image.purge
   redirect_back(fallback_location: edit_post_path(@post.id))
  end
+
   protected
 
   def error_show(var, var2)
