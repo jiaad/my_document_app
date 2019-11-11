@@ -8,3 +8,5 @@ reset:
 	rails db:migrate:reset
 hr_mig: 
 	heroku run rails db:migrate
+hr_c:
+	heroku run rails c

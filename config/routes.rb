@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
 resources :admin
 resources :profile do 
-	match '/follow' , to: "profile#follow", via: 'post' 
-	match '/unfollow' , to: "profile#unfollow", via: 'delete' 
+	match '/follow' , to: "followers#follow", via: 'post' 
+	match '/unfollow' , to: "followers#unfollow", via: 'delete' 
 
 end
 resources :followers, only: [:new, :create, :delete]
