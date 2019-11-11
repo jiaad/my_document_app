@@ -24,13 +24,16 @@ class User < ApplicationRecord
 
 
 #=================== FOLLOWERS ============================
-
+#https://medium.com/@esmerycornielle/making-a-followers-feature-with-ruby-on-rails-and-active-record-ddb3d1dda060
 has_many :follows
-has_many :followers_relationships , foreign_key: 'following_id', class_name: 'Follow'
-has_many :followers, through: :followers_relationships, source: :followers
 
-has_many :following_relationships, foreign_key: 'user_id', class_name: 'Follow'
-has_many :following, through: :followers_relationships, source: :followers
+# belongs_to :follower, foreign_key: 'user_id', class_name: 'User'
+has_many :follower_relationships , foreign_key: :following_id, class_name: 'Follow'
+has_many :followers, through: :follower_relationships, source: :follower
+
+# belongs_to :following, foreign_key: 'following_id', class_name: 'User'
+has_many :following_relationships, foreign_key: :user_id, class_name: 'Follow'
+has_many :followings, through: :following_relationships, source: :following
 
 #======================== END ==============================
 
