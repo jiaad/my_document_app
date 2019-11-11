@@ -22,9 +22,24 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
   has_many :posts, dependent: :destroy
 
+
+#=================== FOLLOWERS ============================
+
+has_many :follows
+has_many :followers_relationships , foreign_key: 'following_id', class_name: 'Follow'
+has_many :followers, through: :followers_relationships, source: :followers
+
+has_many :following_relationships, foreign_key: 'user_id', class_name: 'Follow'
+has_many :following, through: :followers_relationships, source: :followers
+
+#======================== END ==============================
+
+
   def after_confirmation
       UserMailer.welcome_email(self).deliver #if self.confirmed_at_changed?
   end
+
+
 
 
   private
