@@ -10,54 +10,19 @@
   <h5>posted by <span class="username"><%= @post.user.email %> </span>:P</h5>
 </div>
   
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-<% if @post.images.length > 1 %>
-    <ol class="carousel-indicators">
-      <% @post.images.each_with_index do |image, index| %>
-      <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : 'nothing' %>" ></li>
-      <%end%>
-    </ol>
-<%end%>
-    <div class="carousel-inner">
-      <% @post.images.each_with_index do |image, index| %>
-      <div class="carousel-item <%= index == 0 ? 'active' : 'nothing' %>">
-          <%= image_tag(image, class: "d-block w-100 shadow-lg p-3 mb-5 bg-white rounded") %>
-      </div>
-      <% end %>
-    </div>
-<% if @post.images.length > 1 %>
-  
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-<% end %>
-  </div>
+  <%= render partial: 'images' %>
 
   <div class="description">
     <%= @post.description %>
   <div>
+  </div>
+
 
 <%= link_to 'delete', post_path(@post), method: :delete, data: {confirm: 'are tou sure '} %>
 
-<%# <%= form_for [@post, @comment] do |f| %>
 
-<%# <%= form_for url: {new_post_postcomment_path }do |f| %> 
-<%# <%= form_for :PostComment ,  url: { controller: 'post_controller', action: "create", path: 'new_post_postcomment_path' }  do |f| %> 
-<%#= form_for [@post, @comment], :url => post_postcomment_index_path(@post.id) do |f| %>
-
-  <%#= f.text_field :body %>
-  <%#= f.submit 'submit' %>
-<%# end %>
 <%= render partial: 'comments/comments' %>
 <%#= render partial: 'articles/comment', collection: @article.comments.reverse %>
-
-
-
 
 <%= render partial: 'post/comment', collection: @post.comments.reverse %>
 </div><!-- container -->
