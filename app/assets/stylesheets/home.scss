@@ -1,6 +1,7 @@
 $pink:#FF718E;
 
 
+
 .navbar-bg-jiad {
   background: bisque;
 }
@@ -15,11 +16,11 @@ $pink:#FF718E;
   background-size: cover;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+// * {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+// }
 
 .time-container {
   font-family: 'Quicksand', sans-serif;
@@ -36,8 +37,13 @@ $pink:#FF718E;
 }
 
 #time {
-  font-size: 8rem;
+  font-size: 12em;
   color: $pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  // text-align: center
 
 }
 
@@ -50,13 +56,13 @@ h2 {
   opacity: 0.6;
 }
 
+
+
 @media (max-width: 700px) {
   #time {
     font-size: 6rem;
   }
 }
-
-
 
 /*body{
   background: rgba(40,6,132,1);
