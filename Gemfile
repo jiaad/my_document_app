@@ -63,6 +63,7 @@ group :development do
   gem "awesome_print", require:"ap"
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'rubocop', require: false
 end
 
 group :test do
