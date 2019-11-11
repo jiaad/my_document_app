@@ -14,9 +14,11 @@
 
   <div class="form-group">
     <label for="<%= :description %>">description: </label>
-     <%= f.text_area :description, class:'form-control grow-with-text', :cols => 10, :rows => 10, placeholder:'#livingMyBestLife'%>
+     <%= f.text_area :description, :cols => 10, :rows => 10, placeholder:'#livingMyBestLife', class:"form-control grow-with-text #{@post.errors.include?(:description) ? 'lol-error': 'boooo'} "%>
+     <% if @post.errors.include?(:description)  %>
+        <span style="background: red; color: white;"><%= @post.errors.full_messages_for(:description).join('') %></span>
+     <% end %>
   </div>
-
 
 
 

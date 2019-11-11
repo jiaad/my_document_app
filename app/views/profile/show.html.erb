@@ -1,5 +1,11 @@
 <h1>Profile#show</h1>
 <p>Find me in app/views/profile/show.html.erb</p>
+
+<% if user_signed_in? && @user == current_user %>
+
+<h1>I am The mandarin</h1>
+<%end%>
+
 <p><%= @user.pseudo %></p>
 <p><%= @user.name %></p>
 <p><%= @user.slug %></p>
@@ -31,3 +37,9 @@
   <%= f.submit "update" %>
 <% end %>
 <% end %>
+
+  <%= form_for @follow, url: profile_follow_path(@user.id) do |f| %>
+    <%= f.submit "follow" %>
+  <% end %>
+
+<%= link_to 'unfollow',  profile_unfollow_path(@user.id), method: :delete, data: {alert: 'are you sure' }%>

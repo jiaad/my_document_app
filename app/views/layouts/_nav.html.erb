@@ -1,11 +1,13 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+<nav class="navbar navbar-expand-lg  static-top custom-color">
   <div class="container">
     <a class="navbar-brand" href="<%= root_path %>">
           <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" ">
+          <span class="navbar-toggler-icon">
+            <i class="fa fa-bars" style="background:white; font-size:28px;"></i>
+          </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
@@ -23,11 +25,11 @@
 
       <% if user_signed_in? %>
         <li class="nav-item">
-        <%= link_to('Logout', destroy_user_session_path, method: :delete, class:'nav-link',) %>        
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class:'nav-link',) %>
         </li>
       <% else %>
         <li class="nav-item">
-        <%= link_to('Login', new_user_session_path, class:'nav-link')%>  
+        <%= link_to('Login', new_user_session_path, class:'nav-link')%>
         </li>
       <% end %>
 
@@ -36,15 +38,15 @@
         </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           More
         </a>
         <% if user_signed_in? %>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<%= edit_user_registration_path%>">settings</a>
-            <a class="dropdown-item" href="<%= profile_path(current_user) %>">profile</a>
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+            <a class="dropdown-item custom-color" href="<%= edit_user_registration_path%>">settings</a>
+            <a class="dropdown-item custom-color" href="<%= profile_path(current_user) %>">profile</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Donate on Patreon</a>
+            <a class="dropdown-item custom-color" href="#">Donate on Patreon</a>
           </div>
         <%end%>
       </li>
@@ -54,5 +56,3 @@
     </div>
   </div>
 </nav>
-
-
