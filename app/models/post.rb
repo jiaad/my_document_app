@@ -5,5 +5,4 @@ class Post < ApplicationRecord
   
   validates :description, presence: {message: "description must be given"}
   validates :images, presence: {message: "image must be given"}
-
 end
