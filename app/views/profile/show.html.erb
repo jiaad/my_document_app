@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Profile#show</h1>
 <p>Find me in app/views/profile/show.html.erb</p>
 
@@ -38,8 +39,13 @@
 <% end %>
 <% end %>
 
-  <%= form_for @follow, url: profile_follow_path(@user.id) do |f| %>
-    <%= f.submit "follow" %>
-  <% end %>
-
-<%= link_to 'unfollow',  profile_unfollow_path(@user.id), method: :delete, data: {alert: 'are you sure' }%>
+  <% if user_signed_in? && current_user.id != @user.id  %>
+    <%if Follow.check_record(@current_user.id, params[:id].to_i) %>
+      <%= link_to 'unfollow',  profile_unfollow_path(@user.id), method: :delete, data: {alert: 'are you sure' }%>
+    <% else %>
+      <%= form_for @follow, url: profile_follow_path(@user.id) do |f| %>
+        <%= f.submit "follow" %>
+      <% end %>
+    <%end%>
+  <%end%>
+</div>

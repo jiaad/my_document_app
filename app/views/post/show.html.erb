@@ -6,11 +6,12 @@
 
 
 
-
+<div>
+  <h5>posted by <span class="username"><%= @post.user.email %> </span>:P</h5>
+</div>
   
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 <% if @post.images.length > 1 %>
-
     <ol class="carousel-indicators">
       <% @post.images.each_with_index do |image, index| %>
       <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : 'nothing' %>" ></li>
@@ -36,6 +37,10 @@
     </a>
 <% end %>
   </div>
+
+  <div class="description">
+    <%= @post.description %>
+  <div>
 
 <%= link_to 'delete', post_path(@post), method: :delete, data: {confirm: 'are tou sure '} %>
 
