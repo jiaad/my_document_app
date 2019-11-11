@@ -19,19 +19,16 @@ class User < ApplicationRecord
 
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+         :recoverable, :rememberable, :validatable#, #:confirmable
   has_many :posts, dependent: :destroy
 
 
 #=================== FOLLOWERS ============================
-#https://medium.com/@esmerycornielle/making-a-followers-feature-with-ruby-on-rails-and-active-record-ddb3d1dda060
 has_many :follows
 
-# belongs_to :follower, foreign_key: 'user_id', class_name: 'User'
 has_many :follower_relationships , foreign_key: :following_id, class_name: 'Follow'
 has_many :followers, through: :follower_relationships, source: :follower
 
-# belongs_to :following, foreign_key: 'following_id', class_name: 'User'
 has_many :following_relationships, foreign_key: :user_id, class_name: 'Follow'
 has_many :followings, through: :following_relationships, source: :following
 

@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :user
-  validates :description, presence: {message: "description must be given"}
   has_many_attached :images
   has_many :comments , dependent: :destroy
+  
+  validates :description, presence: {message: "description must be given"}
+  validates :images, presence: {message: "image must be given"}
+
 end
