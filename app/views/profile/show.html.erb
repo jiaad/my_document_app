@@ -1,10 +1,7 @@
 <div class="container">
-<h1>Profile#show</h1>
-<p>Find me in app/views/profile/show.html.erb</p>
 
 <% if user_signed_in? && @user == current_user %>
-
-<h1>I am The mandarin</h1>
+<h1>I am This user </h1>
 <%end%>
 
 <p><%= @user.pseudo %></p>
