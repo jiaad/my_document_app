@@ -21,5 +21,7 @@ end
 get 'static/news',      to: 'static#news'
 get 'static/about',     to: 'static#about'
 get 'static/contact',   to: 'static#contact'
+get 'static/not_found',   to: 'static#not_found'
+
   #devise_for :users, controllers: { confirmations: 'confirmations' }
 end
