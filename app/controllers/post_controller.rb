@@ -1,9 +1,9 @@
 class PostController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-
-  
+  before_action :redirect_if_not_found, only: [:show]
+  before_action :set_post, except: [:new, :create, :image_destroy]
   def show
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @comment = Comment.new
     @comment.post_id = @post.id
   end
@@ -13,11 +13,11 @@ class PostController < ApplicationController
   end
   
   def edit
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     if @post.destroy
       flash[:notice] = "Post deleted successfully"
       redirect_to root_path
@@ -42,7 +42,7 @@ class PostController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post.id)
     else
@@ -64,6 +64,16 @@ class PostController < ApplicationController
  end
 
   protected
+
+  def redirect_if_not_found
+    if !Post.exists?(params[:id])
+      redirect_to '/'
+    end
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def error_show(var, var2)
     puts "="*30
