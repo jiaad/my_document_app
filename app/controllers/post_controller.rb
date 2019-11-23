@@ -1,6 +1,8 @@
 class PostController < ApplicationController
+
+  include PostConcern #some methods
+
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :redirect_if_not_found, only: [:show]
   before_action :set_post, except: [:new, :create, :image_destroy]
   def show
     # @post = Post.find(params[:id])
@@ -51,31 +53,26 @@ class PostController < ApplicationController
     end
   end
 
- def image_destroy
-  #@post = Post.find(params[:id])
-  #Post.find_by(id:params[:id],images: images.id ).destroy
-  #Post.images.find(params[:images_id])
-  @post = Post.find(params[:post_id])
-  #@image = ActiveStorage::Attachment.find(params[:id])
-  #answer # https://stackoverflow.com/questions/53411099/removing-activestorage-attachments-in-rails-5/53444294#53444294
-  @image = @post.images.find(params[:image_id])
-  @image.purge
-  redirect_back(fallback_location: edit_post_path(@post.id))
- end
+  def image_destroy
+    #@post = Post.find(params[:id])
+    #Post.find_by(id:params[:id],images: images.id ).destroy
+    #Post.images.find(params[:images_id])
+    @post = Post.find(params[:post_id])
+    #@image = ActiveStorage::Attachment.find(params[:id])
+    #answer # https://stackoverflow.com/questions/53411099/removing-activestorage-attachments-in-rails-5/53444294#53444294
+    @image = @post.images.find(params[:image_id])
+    @image.purge
+    redirect_back(fallback_location: edit_post_path(@post.id))
+  end
 
   protected
 
-  def redirect_if_not_found
-    if !Post.exists?(params[:id])
-      redirect_to '/'
-    end
-  end
 
   def set_post
     @post = Post.find(params[:id])
   end
 
-  def error_show(var, var2)
+  def error_show(var)
     puts "="*30
       puts var.errors.full_messages
     puts "="*30
