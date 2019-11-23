@@ -1,5 +1,14 @@
 class User < ApplicationRecord
   
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :pseudo, presence: true
+  validates :role, presence: true
+
+
+
+
+
   extend FriendlyId
   friendly_id :pseudo, use:Module.new {
     def should_generate_new_friendly_id?
