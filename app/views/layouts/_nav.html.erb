@@ -20,7 +20,7 @@
           <a class="nav-link" href="<%= new_post_path %>">new post</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="<%=static_news_path%>">News</a>
         </li>
 
       <% if user_signed_in? %>
@@ -34,22 +34,22 @@
       <% end %>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="<%=static_contact_path%>">Contact</a>
         </li>
 
+        <% if user_signed_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           More
         </a>
-        <% if user_signed_in? %>
           <div class="dropdown-menu custom-color" aria-labelledby="navbarDropdown">
             <a class="dropdown-item custom-color" href="<%= edit_user_registration_path%>">settings</a>
             <a class="dropdown-item custom-color" href="<%= profile_path(current_user) %>">profile</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item custom-color" href="#">Donate on Patreon</a>
           </div>
-        <%end%>
       </li>
+        <%end%>
 
 
       </ul>
