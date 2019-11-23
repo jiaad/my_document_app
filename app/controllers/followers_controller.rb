@@ -7,8 +7,7 @@ class FollowersController < ApplicationController
 
   def follow
     @current = current_user
-    @following = Follow.new(user_id: @current.id,
-                            following_id: params[:profile_id])
+    @following = Follow.new(user_id: @current.id, following_id: params[:profile_id])
     if Follow.check_record(@current.id, params[:profile_id].to_i) == true
       flash[:danger] = 'cannot follow'
       redirect_to profile_path(params[:profile_id])
@@ -19,11 +18,11 @@ class FollowersController < ApplicationController
   end
 
   def unfollow
-    @follow = Follow.find_by(user_id: current_user.id, 
-      following_id: params[:profile_id].to_i)
+    @follow = Follow.find_by(user_id: current_user.id,
+                             following_id: params[:profile_id].to_i)
     if @follow.destroy
       redirect_to profile_path(params[:profile_id])
-      flash[:success] = 'wow you un followed'
+      flash[:success] = 'wow you unfollowed'
     else
       flash[:danger] = "didn't unfollow"
     end
