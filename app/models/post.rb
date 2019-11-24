@@ -5,4 +5,5 @@ class Post < ApplicationRecord
   
   validates :description, presence: {message: "description must be given"}
   validates :images, presence: {message: "image must be given"}
+  scope :followed_users_posts, -> (follower_id){where(user_id: follower_id )}
 end
