@@ -5,9 +5,10 @@ class User < ApplicationRecord
   validates :pseudo, presence: true
   validates :role, presence: true
 
-
-
-
+  scope :all_vips, -> {where(role: 'vip')}
+  scope :all_users, -> {where(role: 'user')}
+  scope :all_admins, -> {where(role: 'admin')}
+  scope :all_moderators, -> {where(role: 'moderator')}
 
   extend FriendlyId
   friendly_id :pseudo, use:Module.new {
@@ -17,7 +18,7 @@ class User < ApplicationRecord
   }
 
 
-  enum role: [:user, :vip, :admin]
+  enum role: [:user, :vip, :admin, :moderator]
   after_initialize :set_default_role, :if => :new_record?
 
   has_many :comments, :through => :posts
