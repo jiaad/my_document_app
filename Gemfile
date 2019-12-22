@@ -39,6 +39,7 @@ gem 'devise'
 gem 'mailjet'
 gem 'dropzonejs-rails'
 gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+gem 'trix'
 
 # gem 'bootstrap'
 

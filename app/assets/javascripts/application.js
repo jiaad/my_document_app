@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require dropzone
 //= require custom_app
+//= require trix
 //= require_tree .
